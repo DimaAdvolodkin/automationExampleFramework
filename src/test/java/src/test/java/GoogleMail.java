@@ -9,7 +9,7 @@ public class GoogleMail {
     SuiteSetUp suite = new SuiteSetUp();
     WebDriver driver;
 
-    By gmailButton = By.xpath("//div[@class='o3j99 LLD4me yr19Zb LS8OJ']");
+    By gmailLink = By.linkText("Gmail");
     By signInButton = By.xpath("//a[normalize-space()='Sign in']");
     By emailUserName = By.name("identifier");
     By nextButton = By.xpath("//span[normalize-space()='Next']");
@@ -18,10 +18,11 @@ public class GoogleMail {
     public void verifyGoogleMail() {
         driver = suite.setDriver();
         driver.get("http://www.google.com");
-        driver.findElement(gmailButton).click();
+        driver.findElement(gmailLink).click();
         driver.findElement(signInButton).click();
         driver.findElement(emailUserName).sendKeys("bobak.samiyi@gmail.com");
         driver.findElement(nextButton).click();
+        driver.get("http://www.google.com");
     }
 
 
