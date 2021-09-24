@@ -9,6 +9,8 @@ public class GoogleMail {
     SuiteSetUp suite = new SuiteSetUp();
     WebDriver driver;
 
+
+
     By gmailLink = By.linkText("Gmail");
     By signInButton = By.xpath("//a[normalize-space()='Sign in']");
     By emailUserName = By.name("identifier");
