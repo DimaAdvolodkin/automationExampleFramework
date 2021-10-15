@@ -1,4 +1,4 @@
-package src.test.java;
+package src.test.java.tests;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,25 +6,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import src.test.java.helperMethods.SuiteSetUp;
 
-public class googleSearch {
+public class GoogleSearchHi {
 
     SuiteSetUp suite = new SuiteSetUp();
     WebDriver driver;
 
+
     By searchInput = By.name("q");
     By searchButton = By.xpath("//div[@jsname='VlcLAe']//input[@name='btnK']");
-    By adelleSongLinkText = By.linkText("Adele - Hello - YouTube");
+    By hiLinkText = By.linkText("LOVELYZ \"안녕(Hi~)\" Official MV - YouTube");
+
 
 
     @Test
-    public void verifyGoogleSearch() {
+    public void verifyGoogleHiSearch() {
         driver = suite.setDriver();
         driver.get("http://www.google.com");
-        driver.findElement(searchInput).sendKeys("Hello");
+        driver.manage().window().maximize();
+        driver.findElement(searchInput).sendKeys("hi");
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
         driver.findElement(searchButton).click();
-        Assert.assertTrue("Failed search on google", driver.findElement(adelleSongLinkText).isDisplayed());
+        Assert.assertTrue("Failed search on google", driver.findElement(hiLinkText).isDisplayed());
     }
+
+
+
 }
