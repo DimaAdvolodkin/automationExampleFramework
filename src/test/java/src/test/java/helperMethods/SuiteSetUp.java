@@ -1,4 +1,4 @@
-package src.test.java;
+package src.test.java.helperMethods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

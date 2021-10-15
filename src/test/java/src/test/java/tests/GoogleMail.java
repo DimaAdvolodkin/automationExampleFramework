@@ -1,15 +1,14 @@
-package src.test.java;
+package src.test.java.tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import src.test.java.helperMethods.SuiteSetUp;
 
 public class GoogleMail {
 
     SuiteSetUp suite = new SuiteSetUp();
     WebDriver driver;
-
-
 
     By gmailLink = By.linkText("Gmail");
     By signInButton = By.xpath("//a[normalize-space()='Sign in']");
